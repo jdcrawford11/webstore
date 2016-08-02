@@ -4,6 +4,8 @@
       margin-bottom: 0;
       border-radius: 0;
     }
+
+   
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 750px}
@@ -14,6 +16,31 @@
       background-color: #f1f1f1;
       height: 100%;
     }
+
+.categories {
+    width: 18%;
+    height: 90%;
+    float:left;
+    padding-left: 10px;
+}
+.categories ul li{
+   padding: 4px 5px;
+    margin: 5px 0px;
+    list-style: none;
+
+}
+.categories ul li.active{
+    background: #7DD5FF;
+    border-radius: 4px;
+}
+.categories ul li:hover {
+    background: #7DD5FF;
+    border-radius: 4px;
+}
+.categories ul li a{
+   text-decoration: none;
+   color: rgba(0,0,0,0.7);
+   font-weight: 700;
     
     /* Set black background color, white text and some padding */
     footer {

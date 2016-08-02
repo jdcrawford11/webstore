@@ -31,7 +31,6 @@ class RegistrationController extends \BaseController{
             Session::flash('validation_messages', $messages);
             return Redirect::back()->withInput();
         }
-
         $first_name = Input::get('first_name');
         $last_name = Input::get('last_name');
 		$email = Input::get('email');

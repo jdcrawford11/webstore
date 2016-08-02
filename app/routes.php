@@ -15,14 +15,24 @@ Route::get('/', function()
 {
 	$categories = Category::all();
 	//$products = Product::all();
-	return View::make('hello')->withCategories($categories);
+	//return View::make('hello')->withCategories($categories);
+	return View::make('hello', compact('categories'));
+
+	//return View::make('hello')->withCategories($categories)->withProducts($products);
 });
 
 //Authentication Controller
+//Route::get('/login', 'AuthenticationController@showLoginView');
+//Route::post('/login', 'AuthenticationController@loginUser');
+
+
+Route::get('/products', 'ProductController@getIndex');
+
+
 Route::get('/login', 'AuthenticationController@showLoginView');
 Route::post('/login', 'AuthenticationController@loginUser');
 
-Route::get('/logout', 'AuthenticationController@logout');
+//Route::get('/logout', 'AuthenticationController@logout');
 
 //Route::get('/users', 'AuthenticationController@showUsers');
 
@@ -71,7 +81,10 @@ Route::get('/deleteProduct/{id}', array('uses' => 'AdminController@deleteProduct
 }); */
 
 //Route::get('order', ['as' => 'order', 'uses' => 'PagesController@getOrder']);
-//Route::post('order', ['as' => 'order-post', 'uses' => 'PagesController@postOrder']);
+//Route::post('order', ['as' => 'order-post', 'uses' => 'PagesController@postOrder']);4
+
+
+//Route::post()
 
 Route::get('/order','PagesController@getOrder');
 Route::post('/order','PagesController@postOrder');
@@ -83,6 +96,11 @@ Route::post('/order','PagesController@postOrder');
 	//Route::post('order',function() {
 		//return Redirect::to('success');
 	//});
+
+Route::post('/cart/add','CartController@postAddToCart');
+Route::get('cart', ['as' => 'cart', 'uses' => 'CartController@getIndex']);
+//Route::Get('/cart', 'CartController@getIndex');
+
 
 
 Route::post('/success','PagesController@postOrder');
