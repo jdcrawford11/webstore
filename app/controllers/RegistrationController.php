@@ -40,7 +40,7 @@ class RegistrationController extends \BaseController{
 
 		//compare passwords
 
-		try{
+		
 
 			User::create([
 				'first_name' => $first_name,
@@ -50,15 +50,8 @@ class RegistrationController extends \BaseController{
 				
 			]);
 
-		}catch(Exception $e){
+		
 
-			//Errors Log 
-			 Session::flash('error_message', 'Oops! Something is wrong!');
-			return Redirect::back()->withInput();
-		}
-
-
-		Session::flash('success_message', 'Success!');
 
 		return Redirect::to('/');
 
