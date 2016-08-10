@@ -1,8 +1,8 @@
 <?php
 
-class AuthenticationController extends BaseController {
+class AuthenticationController extends \BaseController {
 
-public function showLoginView(){
+	public function showLoginView(){
 
 		return View::make('login');
 
@@ -11,7 +11,7 @@ public function showLoginView(){
 	public function loginUser(){
 
 		$validation = Validator::make(Input::all(),[
-			'email' =>'required', 
+			'email' =>' required', 
 			'password' => 'required',
 		]);
 
@@ -23,13 +23,15 @@ public function showLoginView(){
 
 		if (Auth::attempt(Input::only('email', 'password'), true)){
 
-			return Redirect::to('hello');
+			return Redirect::to('/');
 		}else{
 
 			Session::flash('error_message', 'Invalid credentials');
-			return Redirect::to('login');
+			return Redirect::to('/login')->withInput();
 
 		}
+
+
 
 	}
 
@@ -37,7 +39,7 @@ public function showLoginView(){
 
 		Session::flush();
         Auth::logout();
-        return Redirect::to('login');
+        return Redirect::to('/');
 
 	}
 
@@ -45,7 +47,7 @@ public function showLoginView(){
 
 		$users = User::all();
 
-		return $users;
+		return $users->toJson();
 
 	}
 

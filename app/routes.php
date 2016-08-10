@@ -14,12 +14,16 @@
 Route::get('/', function()
 {
 	$categories = Category::all();
-	//$products = Product::all();
+	$products = Product::all();
 	//return View::make('hello')->withCategories($categories);
-	return View::make('hello', compact('categories'));
+	return View::make('hello')->withCategories($categories)->withProducts($products);
 
 	//return View::make('hello')->withCategories($categories)->withProducts($products);
-});
+}); 
+
+Route::get('/search', array('uses' => 'HomeController@search', 'as' => 'search'));
+
+Route::get('category/{id}', array('uses' => 'HomeController@getCategory', 'as' => 'getCategory'));
 
 //Authentication Controller
 //Route::get('/login', 'AuthenticationController@showLoginView');
@@ -31,6 +35,7 @@ Route::get('/products', 'ProductController@getIndex');
 
 Route::get('/login', 'AuthenticationController@showLoginView');
 Route::post('/login', 'AuthenticationController@loginUser');
+Route::get('/logout', 'AuthenticationController@logout');
 
 //Route::get('/logout', 'AuthenticationController@logout');
 
@@ -38,8 +43,11 @@ Route::post('/login', 'AuthenticationController@loginUser');
 
 
 //Registration Controller
-Route::get('/registration', 'RegistrationController@showSignUpView');
-Route::post('/registration', 'RegistrationController@signUp');
+Route::get('/signup', 'RegistrationController@showSignUpView');
+Route::post('/signup', 'RegistrationController@signUp');
+
+
+
 
 Route::group(array('prefix' => 'admin'), function(){
 //Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){

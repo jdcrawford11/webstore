@@ -1,60 +1,51 @@
-
-/* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-
-   
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 750px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 50px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-
-.categories {
-    width: 18%;
-    height: 90%;
-    float:left;
-    padding-left: 10px;
+body {
+ padding-top:50px;
 }
-.categories ul li{
-   padding: 4px 5px;
-    margin: 5px 0px;
-    list-style: none;
 
+#masthead { 
+ min-height:250px;
 }
-.categories ul li.active{
-    background: #7DD5FF;
-    border-radius: 4px;
-}
-.categories ul li:hover {
-    background: #7DD5FF;
-    border-radius: 4px;
-}
-.categories ul li a{
-   text-decoration: none;
-   color: rgba(0,0,0,0.7);
-   font-weight: 700;
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;}
-    }
 
+#masthead h1 {
+ font-size: 30px;
+ line-height: 1;
+ padding-top:20px;
+}
+
+#masthead .well {
+ margin-top:8%;
+}
+
+@media screen and (min-width: 768px) {
+  #masthead h1 {
+    font-size: 50px;
+  }
+}
+
+.navbar-bright {
+ background-color:#111155;
+ color:#fff;
+}
+
+.affix-top,.affix{
+ position: static;
+}
+
+@media (min-width: 979px) {
+  #sidebar.affix-top {
+    position: static;
+    margin-top:30px;
+    width:228px;
+  }
+  
+  #sidebar.affix {
+    position: fixed;
+    top:70px;
+    width:228px;
+  }
+}
+
+#sidebar li.active {
+  border:0 #eee solid;
+  border-right-width:5px;
+}

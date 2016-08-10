@@ -8,8 +8,9 @@
 		"cartalyst/stripe-laravel": "1.0.*",
 		"vlucas/phpdotenv": "^2.3",
 		"way/generators": "~2.0",
-		"intervention/image": "dev-master"
-		
+		"intervention/image": "dev-master",
+		"guzzlehttp/guzzle": "5.2",
+		"codeception/base": "2.*"
 		
 
 	},
@@ -39,5 +40,8 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+	"require-dev": {
+		"codeception/base": "2.*"
+	}
 }

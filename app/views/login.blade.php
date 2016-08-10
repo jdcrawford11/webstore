@@ -1,12 +1,71 @@
-<h3> Login </h3>
+<div class="container">	
+		<!--col 1 -->
+		<div class="col-md-3">
+		</div>
 
-	<hr>
+		<!--col 2 -->
+		<div class="col-md-6 myform">
 
-		{{Form::open(['action' => 'AuthenticationController@loginUser', 'method' => 'POST'])}}
+			@if(Session::has('error_message'))
 
-		{{ Form::email('email', null, [ 'placeholder' => 'Email', 'required']) }}
-		
-		{{ Form::password("password" , [ 'placeholder' => 'Password', 'required'])}}
+				<div class="alert alert-danger" role="alert">
+				  {{Session::get('error_message')}}
+				</div>
 
-		{{ Form:: submit('Login') }}
-	{{Form::close()}}
+			@endif
+
+			<h1 class="text-center">Login</h1>
+
+			{{Form::open(['action' => 'AuthenticationController@loginUser', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-10">
+					{{ Form::email('email', null, [ 'placeholder' => 'Email', 
+					'class' => 'form-control', 'required']) }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Password</label>
+				<div class="col-sm-10">
+					{{ Form::password("password" , [ 'placeholder' => 'Password', 'class' => 'form-control', 'required'])}}
+				</div>	
+			</div>	
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+				{{ Form:: submit('Login', [ 'class' => 'btn btn-primary btn-block']) }}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10 text-center">
+				<p class="text-center">Don't have an account? <a href="/signup" class="btn btn-link">Sign up</a></p>	
+				
+				</div>
+			</div>
+			{{Form::close()}}
+		</div>
+
+		<!--col 3 -->
+		<div class="col-md-3">
+		</div>	
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
