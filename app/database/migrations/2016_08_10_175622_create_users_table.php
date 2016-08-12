@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCartsTable extends Migration {
+class CreateUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,15 @@ class CreateCartsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('carts', function(Blueprint $table)
+		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('member_id');
-			$table->integer('product_id');
-			$table->integer('amount');
-			$table->decimal('total',10,2);
+			$table->string('first_name');
+			$table->string('last_name');
+			$table->string('email')->unique();
+			$table->string('password');
+			$table->string('stripe_customer_id');
+			$table->rememberToken();
 			$table->timestamps();
 		});
 	}
@@ -30,7 +32,7 @@ class CreateCartsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('carts');
+		Schema::drop('users');
 	}
 
 }

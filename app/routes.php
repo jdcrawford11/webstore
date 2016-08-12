@@ -11,14 +11,16 @@
 |
 */
 
+
+// 'before' => 'auth' is a Route filters that is used to allow only authenticated users to access a given route.
+
 Route::get('/', function()
 {
 	$categories = Category::all();
 	$products = Product::all();
-	//return View::make('hello')->withCategories($categories);
 	return View::make('hello')->withCategories($categories)->withProducts($products);
 
-	//return View::make('hello')->withCategories($categories)->withProducts($products);
+	
 }); 
 
 Route::get('/search', array('uses' => 'HomeController@search', 'as' => 'search'));
@@ -26,8 +28,7 @@ Route::get('/search', array('uses' => 'HomeController@search', 'as' => 'search')
 Route::get('category/{id}', array('uses' => 'HomeController@getCategory', 'as' => 'getCategory'));
 
 //Authentication Controller
-//Route::get('/login', 'AuthenticationController@showLoginView');
-//Route::post('/login', 'AuthenticationController@loginUser');
+
 
 
 Route::get('/products', 'ProductController@getIndex');
@@ -37,9 +38,7 @@ Route::get('/login', 'AuthenticationController@showLoginView');
 Route::post('/login', 'AuthenticationController@loginUser');
 Route::get('/logout', 'AuthenticationController@logout');
 
-//Route::get('/logout', 'AuthenticationController@logout');
 
-//Route::get('/users', 'AuthenticationController@showUsers');
 
 
 //Registration Controller
@@ -50,14 +49,13 @@ Route::post('/signup', 'RegistrationController@signUp');
 
 
 Route::group(array('prefix' => 'admin'), function(){
-//Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 
 Route::get('/', array('uses' => 'AdminController@welcome', 'as' => 'AdminIndex'));
 
-//Routes for Categories
+//Routes for Categories (Admin)
+
 
 Route::get('/newCategory', array('uses' => 'AdminController@newCategory', 'as' => 'NewCategory'));
-
 Route::get('/editCategory/{id}', array('uses' => 'AdminController@editCategory', 'as' => 'editCategory'));
 
 
@@ -68,7 +66,7 @@ Route::post('/updateCategory/{id}', array('uses' => 'AdminController@updateCateg
 
 Route::get('/deleteCategory/{id}', array('uses' => 'AdminController@deleteCategory', 'as' => 'deleteCategory')); 
 
-//Routes for Products
+//Routes for Products (Admin)
 
 Route::get('/newProduct', array('uses' => 'AdminController@newProduct', 'as' => 'NewProduct'));
 
@@ -82,33 +80,59 @@ Route::post('/updateProduct/{id}', array('uses' => 'AdminController@updateProduc
 Route::get('/deleteProduct/{id}', array('uses' => 'AdminController@deleteProduct', 'as' => 'deleteProduct')); 
 
 
-
-/*Route::get('/',function()
-{
-	return redirect()->route('order');
-}); */
-
-//Route::get('order', ['as' => 'order', 'uses' => 'PagesController@getOrder']);
-//Route::post('order', ['as' => 'order-post', 'uses' => 'PagesController@postOrder']);4
+Route::get('/orders', [
+	'before' => 'auth.basic',
+	'uses' => 'OrderController@getIndex'
+]);
 
 
-//Route::post()
+//Shopping Cart (Cart Controller)
 
-Route::get('/order','PagesController@getOrder');
-Route::post('/order','PagesController@postOrder');
+Route::post('/cart/add', [
+	'before' => 'auth.basic', 
+	'uses' => 'CartController@postAddToCart'
+
+	]);
+
+Route::get('/cart', [
+	'before' => 'auth.basic',
+	'as' => 'cart',
+	'uses' => 'CartController@getIndex',
+
+	]);
+
+Route::get('/cart/delete/{id}', [
+	'before' => 'auth.basic',
+	'as' => 'delete_product_from_cart',
+	'uses' => 'CartController@getDelete'
+
+	]);
+
+//Checkout (Order Controller)
+
+Route::get('/checkout', [
+	'before' => 'auth',
+	'uses' => 'OrderController@getCheckout',
+	'as' => 'checkout'
+
+	]);
+
+Route::post('/checkout', [
+	'before' => 'auth',
+	'uses' => 'OrderController@getConfirmPage'
+	]);
+
+
+Route::get('/checkout/confirm', function() {
+	return Redirect::to('/');
+
+});
+
+Route::post('/checkout/confirm', array(
+	'before' => 'auth',
+	'uses' => 'OrderController@confirm'));
+
+Route::get('/summary', 'OrderController@confirm');
 
 
 
-/*	return Redirect::to('order/success');*/
-
-	//Route::post('order',function() {
-		//return Redirect::to('success');
-	//});
-
-Route::post('/cart/add','CartController@postAddToCart');
-Route::get('cart', ['as' => 'cart', 'uses' => 'CartController@getIndex']);
-//Route::Get('/cart', 'CartController@getIndex');
-
-
-
-Route::post('/success','PagesController@postOrder');

@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"cartalyst/stripe-laravel": "1.0.*",
+	"cartalyst/stripe-laravel": "1.0.*",
 		"vlucas/phpdotenv": "^2.3",
 		"way/generators": "~2.0",
 		"intervention/image": "dev-master",

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPasswordUsersTable extends Migration {
+class CreateOrdersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,13 @@ class AddPasswordUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::create('orders', function(Blueprint $table)
 		{
-			$table->string('password')->after('email');
+			$table->increments('id');
+			$table->integer('user_id');
+			$table->text('address');
+			$table->decimal('total',10,2);
+			$table->timestamps();
 		});
 	}
 
@@ -25,10 +29,7 @@ class AddPasswordUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table)
-		{
-			$table->dropColumn('password');
-		});
+		Schema::drop('orders');
 	}
 
 }

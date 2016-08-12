@@ -44,8 +44,8 @@
                         <li><a href="/login">Login</a></li>
                         <li><a href="/signup">Signup</a></li>
                         @else
-                        <li><a href="/order">My Orders <span class="fa fa-briefcase"></span></a></li>
-                        <li><a href="/order">Cart <span class="fa fa-shopping-cart"></span></a></li>
+                        <li><a href="/orders">My Orders <span class="fa fa-briefcase"></span></a></li>
+                        <li><a href="/cart">Cart <span class="fa fa-shopping-cart"></span></a></li>
                         <li><a href="/logout">Logout</a></li>
                     
       </ul>
@@ -56,7 +56,7 @@
 
   
 
-  <!--side column calls the category names from the database-->
+  <!--side column calls the category names from the database using a foreach loop-->
 <div class="container-fluid text-center">    
   <div class="categories">
     <div class="col-sm-2 sidenav">
@@ -95,6 +95,15 @@
           </span>
           <form action="/cart/add" method="post">
     <input type="hidden" name="product" value="{{$product->id}}">
+    <label for="">Quantity</label>
+    <select name="quantity" id="">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+
+    </select>
           <button class="btn btn-danger">Add to Cart</button>
 
 
@@ -105,7 +114,7 @@
       </div>
       </div>
       </div>
-    
+
   
         
     @stop

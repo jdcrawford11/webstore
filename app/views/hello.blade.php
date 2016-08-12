@@ -6,6 +6,7 @@
 @section('content')
   
 
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -46,8 +47,8 @@
                         <li><a href="/login">Login</a></li>
                         <li><a href="/signup">Signup</a></li>
                         @else
-                        <li><a href="/order">My Orders <span class="fa fa-briefcase"></span></a></li>
-                        <li><a href="/order">Cart <span class="fa fa-shopping-cart"></span></a></li>
+                        <li><a href="/orders">My Orders <span class="fa fa-briefcase"></span></a></li>
+                        <li><a href="/cart">Cart <span class="fa fa-shopping-cart"></span></a></li>
                         <li><a href="/logout">Logout</a></li>>
 
       </ul>
