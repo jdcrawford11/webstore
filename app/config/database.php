@@ -50,10 +50,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => $_ENV['DB_HOST'],
-			'database' => $_ENV['DB_NAME'],
-			'username' => $_ENV['DB_USERNAME'],
-			'password' => $_ENV['DB_PASSWORD'],
+			'host'      => '104.131.96.133',
+			'database' => 'Ecommerce',
+			'username' => 'forge',
+			'password' => 'UrO1ZpIr6LodZ0dMRObZ',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
