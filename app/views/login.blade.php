@@ -1,3 +1,11 @@
+@extends('Layouts.master')
+
+@section('title')
+<title>Login</title>
+@end
+
+@section('content')
+
 <div class="container">	
 		<!--col 1 -->
 		<div class="col-md-3">
@@ -50,7 +58,7 @@
 		</div>	
 	</div>
 
-
+@end
 
 
 
