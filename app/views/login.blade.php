@@ -1,3 +1,22 @@
+@extends('Layouts.main')
+
+@section('title')
+<title>Login</title>
+@end
+
+@section('content')
+
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Electronic Store</a>
+    </div>
+
+
 <div class="container">	
 		<!--col 1 -->
 		<div class="col-md-3">
@@ -50,7 +69,7 @@
 		</div>	
 	</div>
 
-
+@end
 
 
 
