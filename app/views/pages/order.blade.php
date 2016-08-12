@@ -26,4 +26,4 @@
 
 </body>
 
-@endsection
+@end
