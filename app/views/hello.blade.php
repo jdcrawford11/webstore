@@ -135,7 +135,7 @@
       <h1 class="col-sm-8" style="margin-top:10px">Featured Products</h1>
 
 
-      <div class="col-sm-12" style="border-bottom: 1px black solid; padding-top:7px">
+    <div class="col-sm-12" style="border-bottom: 1px black solid; padding-top:7px; margin-bottom:40px">
       <div class="row">
           <div class="col-md-3"><img src="img/products/1469692214-lenovo_thinkpad.jpg" width="250" height="250" class="img-responsive">
           </div>
@@ -147,7 +147,7 @@
           </div>
       </div>
 
-      <div class="row" style="margin-bottom:20px">
+      <div class="row">
           <div class="col-md-3">
               <p>Lenovo Thinkpad</p>
               <p>$4.99</p>
@@ -166,15 +166,15 @@
           </div>
       </div>
 
-      </div>
+    </div>
 
   </div>
 
 
 </div>
 
-<div class="bs-docs footer" style="background-color:#2a2730;display:block;height:69px">
-  <div class="container" style="padding-left:15px;padding-top:28px;">
+<div class="bs-docs footer" style="background-color:#2a2730;padding-top:40px;padding-bottom:40px">
+  <div class="container" style="padding-left:15px">
     <div class="bs-docs-footer-links" style="color:white">
       <p style="display:inline;margin-right:30px"><a href="https://github.com/jdc747/webstore">Github</a></p>
       <p style="display:inline;margin-right:30px">Facebook</p>
