@@ -19,9 +19,7 @@ Route::get('/', function()
 	$categories = Category::all();
 	$products = Product::all();
 	return View::make('hello')->withCategories($categories)->withProducts($products);
-
-	
-}); 
+});
 
 Route::get('/search', array('uses' => 'HomeController@search', 'as' => 'search'));
 

@@ -44,7 +44,7 @@ return array(
 	|
 	*/
 
-	/*'connections' => array(
+	'connections' => array(
 
 		
 
@@ -61,9 +61,9 @@ return array(
 
 		
 
-	),*/
+	),
 
-	'connections' => array(
+	/*'connections' => array(
 
 		'sqlite' => array(
 			'driver'   => 'sqlite',
