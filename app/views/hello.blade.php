@@ -14,7 +14,7 @@
 
 
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" style="margin-bottom:7px">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -23,7 +23,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Electronic Store</a>
+      <a class="navbar-brand" style="" href="/">Electronic Store</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <form class="navbar-form navbar-left">
@@ -45,7 +45,7 @@
 
 
 
-      </ul>
+      </form>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::guest())
                         <li><a href="/login">Login</a></li>
@@ -58,31 +58,35 @@
       </ul>
       @endif
     </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100px"> Categories <span class="caret"></span>
+      </button>
+    <ul class="dropdown-menu">
+      @foreach($categories as $category)
+      <li>
+         <a href=""> {{ link_to_route('getCategory', $category->name, $category->id) }}</a>
+      </li>
+      @endforeach
+    </ul>
+    </div>
   </div>
 </nav>
 
 <div class="container-fluid">
   <div class="categories text-left">
-    <div class="col-sm-2 sidenav">
-        <h2 class=>Categories</h2>
 
-
-
-     @foreach($categories as $category)
-    <p>
-     <a href=""> {{ link_to_route('getCategory', $category->name, $category->id) }}</a></p>
-    @endforeach
-
+    <div class="col-md-2" style="height:378px; border-right:1px black solid">
+    <h3>Search functions</h3>
 
     </div>
 
 
-      <h1 class="col-md-8">Featured Products</h1>
+      <h1 class="col-sm-8" style="margin-top:10px">Featured Products</h1>
 
 
-      <div class="col-sm-8 text-left border black 1px">
+      <div class="col-sm-8" style="border-bottom: 1px black solid; padding-top:7px">
       <div class="row">
-          <div class="col-md-4 text-center"><img src="img/products/1469692214-lenovo_thinkpad.jpg" width="250" height="250" class="img-responsive">
+          <div class="col-md-4"><img src="img/products/1469692214-lenovo_thinkpad.jpg" width="250" height="250" class="img-responsive">
           </div>
           <div class="col-md-4 text-center"><img src="img/products/1470167022-Samsung_Galaxy Tablet.jpg"  width="150" height="150" class="img-responsive">
           </div>
