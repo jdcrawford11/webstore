@@ -28,7 +28,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" style="margin-top:20px">
       <!--<form class="navbar-form navbar-left">-->
       <!--
         <li class="active"><a href="#">Home</a></li>
