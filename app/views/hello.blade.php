@@ -172,7 +172,7 @@
 
 </div>
 
-<div class="col-md-12" style="background-color:#2a2730;position:fixed;bottom:0;padding-top:10px;padding-bottom:10px">
+<div class="col-md-12" style="background-color:#2a2730;position:absolute;right:0;bottom:0;left:0;padding:1rem;text-align:center">
   <div class="container" style="padding-left:15px">
     <div class="bs-docs-footer-links" style="color:white">
       <p style="display:inline;margin-right:30px"><a href="https://github.com/jdc747/webstore">Github</a></p>
