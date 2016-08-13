@@ -27,26 +27,28 @@
       <a class="navbar-brand" style="" href="/">Electronic Store</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <form class="navbar-form navbar-left">
-
+      
+      <ul class="nav navbar-nav">
+      <!--<form class="navbar-form navbar-left">-->
       <!--
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>-->
         <!--start of search form -->
-        <div id="search-formx"> {{Form::open(array('route' => 'search', 'method'=>'GET'))}}
+
+        <div id="search-form"> {{Form::open(array('route' => 'search', 'method'=>'GET'))}}
                                {{Form::text('query',null,array('placeholder'=>'Search for products...'))}}
                                {{Form::submit('search')}}
                                {{Form::close()}}
 
         </div>
 
+      </ul>
           <!--end of search form-->
 
 
 
-      </form>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::guest())
                         <li><a href="/login">Login</a></li>
