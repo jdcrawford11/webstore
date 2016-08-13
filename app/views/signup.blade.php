@@ -1,3 +1,27 @@
+@extends('Layouts.main')
+
+@section('title')
+<title>Registration Page</title>
+@stop
+
+@section('content')
+
+
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Electronic Store</a>
+</div>
+</nav>
+
+
+
 <div class="container">	
 		<!--col 1 -->
 		<div class="col-md-3">
@@ -75,3 +99,5 @@
 		<div class="col-md-3">
 		</div>	
 	</div>
+
+@stop

@@ -1,10 +1,17 @@
 @extends('Layouts.main')
 @section('title')
   <title>Webstore</title>
-
 @stop
+
+@section('style')
+  <link rel="stylesheet" type="text/css" href="/css/hello.css">
+  <script src="js/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+@stop
+
+
 @section('content')
-  
+
 
 
 <nav class="navbar navbar-inverse">
@@ -28,14 +35,13 @@
         <li><a href="#">Contact</a></li>-->
         <!--start of search form -->
       <div class ="nav navbar-nav navbar-left">
-        <div id="search-form"> {{Form::open(array('route' => 'search', 'method'=>'GET'))}}
+        <div id="search-form "> {{Form::open(array('route' => 'search', 'method'=>'GET'))}}
                                {{Form::text('query',null,array('placeholder'=>'Search for products...'))}}
                                {{Form::submit('search')}}
                                {{Form::close()}} 
-      
+
         </div>
-       
-        
+
           </div>
           <!--end of search form-->
 
@@ -57,8 +63,8 @@
   </div>
 </nav>
   
-<div class="container-fluid text-center">    
-  <div class="categories">
+<div class="container-fluid">    
+  <div class="categories text-left">
     <div class="col-sm-2 sidenav">
         <h2>Categories</h2>
 
@@ -71,22 +77,43 @@
 
 
     </div>
-    <div class="col-sm-8 text-left"> 
-      <h1>Featured Products</h1>
-      <p>Add Producs Here</p>
-      
-      <div class="row">
-          <div class="col-md-4"><img src="img/products/1469692214-lenovo_thinkpad.jpg" width="250" height="250" class="img-responsive"></div>
-          <div class="col-md-4"><img src="img/products/1470167022-Samsung_Galaxy Tablet.jpg"  width="150" height="150" class="img-responsive"></div>
-          <div class="col-md-4"><img src="img/products/1470167332-GalaxyS7_Edge.png"  width="250" height="250" class="img-responsive"></div>
-        </div>
-      
 
-      
-     
-    </div>
-    
+
+      <h1>Featured Products</h1>
+
+
+      <div class="col-sm-8 text-left">
+
+
+      <div class="row">
+          <div class="col-md-4 text-center"><img src="img/products/1469692214-lenovo_thinkpad.jpg" width="250" height="250" class="img-responsive">
+          </div>
+          <div class="col-md-4 text-center"><img src="img/products/1470167022-Samsung_Galaxy Tablet.jpg"  width="150" height="150" class="img-responsive">
+          </div>
+          <div class="col-md-4 text-center"><img src="img/products/1470167332-GalaxyS7_Edge.png"  width="250" height="250" class="img-responsive">
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-4">
+              <p>Lenovo Thinkpad</p>
+              <p>$4.99</p>
+          </div>
+          <div class="col-md-4">
+              <p>Samsung Galaxy Tablet</p>
+              <p>$3.99</p>
+          </div>
+          <div class="col-md-4">
+              <p>Galaxy S7_Edge</p>
+              <p>$5.99</p>
+          </div>
+      </div>
+
+      </div>
+
   </div>
+
+
 </div>
 
 

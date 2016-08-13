@@ -1,12 +1,16 @@
 @extends('Layouts.main')
-
 @section('title')
 <title>Login</title>
-@end
+@stop
+
+@section('style')
+  <link rel="stylesheet" type="text/css" href="/css/login.css">
+@stop
 
 @section('content')
 
-<div class="navbar-header">
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -14,7 +18,12 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">Electronic Store</a>
-    </div>
+      <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Signup</a></li>
+      </ul>
+</div>
+</nav>
 
 
 <div class="container">	
@@ -57,8 +66,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10 text-center">
-				<p class="text-center">Don't have an account? <a href="/signup" class="btn btn-link">Sign up</a></p>	
-				
+				<p class="text-center">Don't have an account? <a href="/signup" class="btn btn-link">Sign up</a></p>
 				</div>
 			</div>
 			{{Form::close()}}
@@ -66,10 +74,10 @@
 
 		<!--col 3 -->
 		<div class="col-md-3">
-		</div>	
-	</div>
+		</div>
+</div>
 
-@end
+@stop
 
 
 

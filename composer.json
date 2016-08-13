@@ -10,7 +10,8 @@
 		"way/generators": "~2.0",
 		"intervention/image": "dev-master",
 		"guzzlehttp/guzzle": "5.2",
-		"codeception/base": "2.*"
+		"codeception/base": "2.*",
+		"twbs/bootstrap": "^3.3"
 		
 
 	},
