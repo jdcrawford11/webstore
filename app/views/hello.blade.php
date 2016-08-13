@@ -7,7 +7,6 @@
   <script src="js/jquery-1.10.2.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/hello.css">
-
 @stop
 
 
@@ -173,7 +172,7 @@
 
 </div>
 
-<div class="bs-docs footer" style="background-color:#2a2730;padding-top:40px;padding-bottom:40px">
+<div id="footer" style="background-color:#2a2730;margin-top:40px;height:40px;clear:both;position:relative;">
   <div class="container" style="padding-left:15px">
     <div class="bs-docs-footer-links" style="color:white">
       <p style="display:inline;margin-right:30px"><a href="https://github.com/jdc747/webstore">Github</a></p>
