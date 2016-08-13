@@ -4,9 +4,9 @@
 @stop
 
 @section('style')
-  <link rel="stylesheet" type="text/css" href="/css/hello.css">
   <script src="js/jquery-1.10.2.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/hello.css">
 @stop
 
 
@@ -26,7 +26,7 @@
       <a class="navbar-brand" href="/">Electronic Store</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
+      <form class="navbar-form navbar-left">
 
       <!--
         <li class="active"><a href="#">Home</a></li>
@@ -34,15 +34,13 @@
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>-->
         <!--start of search form -->
-      <div class ="nav navbar-nav navbar-left">
-        <div id="search-form "> {{Form::open(array('route' => 'search', 'method'=>'GET'))}}
+        <div id="search-formx"> {{Form::open(array('route' => 'search', 'method'=>'GET'))}}
                                {{Form::text('query',null,array('placeholder'=>'Search for products...'))}}
                                {{Form::submit('search')}}
-                               {{Form::close()}} 
+                               {{Form::close()}}
 
         </div>
 
-          </div>
           <!--end of search form-->
 
 
@@ -62,11 +60,11 @@
     </div>
   </div>
 </nav>
-  
-<div class="container-fluid">    
+
+<div class="container-fluid">
   <div class="categories text-left">
     <div class="col-sm-2 sidenav">
-        <h2>Categories</h2>
+        <h2 class=>Categories</h2>
 
 
 
@@ -79,12 +77,10 @@
     </div>
 
 
-      <h1>Featured Products</h1>
+      <h1 class="col-md-8">Featured Products</h1>
 
 
-      <div class="col-sm-8 text-left">
-
-
+      <div class="col-sm-8 text-left border black 1px">
       <div class="row">
           <div class="col-md-4 text-center"><img src="img/products/1469692214-lenovo_thinkpad.jpg" width="250" height="250" class="img-responsive">
           </div>
