@@ -6,9 +6,9 @@
 @section('content')
 
 
-  <nav class="navbar navbar-inverse">
+  
+<nav class="navbar navbar-inverse" style="margin-bottom:7px">
   <div class="container-fluid">
-
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="sr-only">Toggle navigation</span>
@@ -16,40 +16,53 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Electronic Store</a>
+      <a class="navbar-brand" style="" href="/">Electronic Store</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
+      
+      <ul class="nav navbar-nav" style="margin-top:20px">
+      <!--<form class="navbar-form navbar-left">-->
+      <!--
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>-->
+        <!--start of search form -->
 
-
-    <!--start of search form -->
-      <div class ="nav navbar-nav navbar-left">
         <div id="search-form"> {{Form::open(array('route' => 'search', 'method'=>'GET'))}}
                                {{Form::text('query',null,array('placeholder'=>'Search for products...'))}}
                                {{Form::submit('search')}}
-                               {{Form::close()}} 
-      
+                               {{Form::close()}}
+
         </div>
-       
-        
-          </div>
-          </ul>
+
+      </ul>
           <!--end of search form-->
 
-        <!--navbar view changes based on whether the user is logged in-->
 
 
       <ul class="nav navbar-nav navbar-right">
-                        @if (Auth::guest())
+        @if (Auth::guest())
                         <li><a href="/login">Login</a></li>
                         <li><a href="/signup">Signup</a></li>
                         @else
                         <li><a href="/orders">My Orders <span class="fa fa-briefcase"></span></a></li>
                         <li><a href="/cart">Cart <span class="fa fa-shopping-cart"></span></a></li>
-                        <li><a href="/logout">Logout</a></li>
-                    
+                        <li><a href="/logout">Logout</a></li>>
+
       </ul>
       @endif
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100px"> Categories <span class="caret"></span>
+      </button>
+    <ul class="dropdown-menu">
+      @foreach($categories as $category)
+      <li>
+         <a href=""> {{ link_to_route('getCategory', $category->name, $category->id) }}</a>
+      </li>
+      @endforeach
+    </ul>
     </div>
   </div>
 </nav>
@@ -61,23 +74,13 @@
   <div class="categories">
     <div class="col-sm-2 sidenav">
 
-    <h2>Categories</h2>
      <?php $cat_name=""; ?>
     
-    @foreach($categories as $category)
-    @if($category->id == $current)
-    <p>
-     <a href="active"> {{ link_to_route('getCategory', $category->name, $category->id) }}</a></p>
-      <?php $cat_name = $category->name; ?>
-    @else
-    <p>{{ link_to_route('getCategory', $category->name, $category->id) }} </p>
-
-    @endif
-    @endforeach
+    
    
         
 
-    </div>
+    </div>  
         
 
    <!--Gets and list the products from the database-->
@@ -87,7 +90,7 @@
         <h2>{{$cat_name}}</h2>
         @foreach($products as $product)
           <div class="product">
-
+          <img src="{{$product->image}}" style="width: 105px; height: 75px;">  
           <a href="#"class="product-name"> <h3>{{$product->name}}</h3></a>
           
           <span class="price">
